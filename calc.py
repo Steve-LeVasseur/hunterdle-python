@@ -49,9 +49,9 @@ def check_word(ind, mon_name, game_name, ele_name, class_name):
 
 
       if guess_class == class_name:
-        print(guess_class + "  \U0001F7E2")
+        print(guess_class + "  \U0001F7E2 \n")
       else:
-        print(guess_class + "  \U000026AB")
+        print(guess_class + "  \U000026AB \n")
       #for char, word in zip(mon_name, guess):
       #      if word in mon_name and word in char:
       #          print(word + " ^ ")
