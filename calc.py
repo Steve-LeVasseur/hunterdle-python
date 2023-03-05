@@ -12,11 +12,16 @@ Your Progress Guide "^XX^+"
 df = pd.read_csv("MonsterHunterdle.csv")
 
 def check_word(ind, mon_name, game_name, ele_name, class_name):
+  ele_list = ele_name.split('-')
   attempt = 6
   while attempt > 0:
     guess = str(input("Guess the monster: "))
     if guess == mon_name:
       print("You guessed the monster correctly! WIN")
+      print(mon_name + "  \U0001F7E2")
+      print(game_name + "  \U0001F7E2")
+      print(ele_name + "  \U0001F7E2")
+      print(class_name + "  \U0001F7E2")
       break
     else:
       attempt = attempt - 1
@@ -32,11 +37,15 @@ def check_word(ind, mon_name, game_name, ele_name, class_name):
       else:
         print(guess_game + "  \U000026AB")
 
-
+      
       if guess_element == ele_name: # Blights and statuses they inflict MORE TO DO HERE
         print(guess_element + "  \U0001F7E2")
       else:
-        print(guess_element + "  \U000026AB")
+        eleguess_list = guess_element.split('-')
+        if not set(ele_list).isdisjoint(eleguess_list):
+          print(guess_element + "  \U0001F7E1")
+        else:
+          print(guess_element + "  \U000026AB")
 
 
       if guess_class == class_name:
