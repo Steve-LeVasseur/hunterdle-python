@@ -1,8 +1,10 @@
 import pandas as pd
 import random
 
-print("""Wordle is a single player game 
-A player has to guess a five letter hidden word
+print("""Welcome to Hunterdle, the Monster Hunter Wordle 
+You have to guess the identity of the monster by guessing other monsters
+We currently include Large Monsters from 
+Monster Hunter Tri
 You have six attempts """)
 
 df = pd.read_csv("MonsterHunterdle.csv")
