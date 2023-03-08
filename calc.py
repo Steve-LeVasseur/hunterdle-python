@@ -5,6 +5,7 @@ print("""Welcome to Hunterdle, the Monster Hunter Wordle
 You have to guess the identity of the monster by guessing other monsters
 We currently include Large Monsters from 
 Monster Hunter Tri
+Monster Hunter 3 Ultimate\n
 You have six attempts """)
 
 df = pd.read_csv("MonsterHunterdle.csv")
@@ -71,7 +72,7 @@ def choose_monster():
    game = df['Intro Game'][rando]
    element = df['Element'][rando]
    classif = df['Class'][rando]
-   print(str(rando)+monster+game+element+classif)
+   # print(str(rando)+monster+game+element+classif)
    check_word(rando, monster, game, element, classif)
 
 
