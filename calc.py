@@ -1,17 +1,16 @@
 import pandas as pd
 import random
 
-print("""Wordle is a single player game 
-A player has to guess a five letter hidden word
-You have six attempts 
-Your Progress Guide "^XX^+"
-"^" Indicates that the letter at that position was guessed correctly 
-"+" indicates that the letter at that position is in the hidden word, but in a different position 
-"X" indicates that the letter at that position is wrong, and isn't in the hidden word   """)
+print("""Welcome to Hunterdle, the Monster Hunter Wordle 
+You have to guess the identity of the monster by guessing other monsters
+We currently include Large Monsters from 
+Monster Hunter Tri
+You have six attempts """)
 
 df = pd.read_csv("MonsterHunterdle.csv")
 
 def check_word(ind, mon_name, game_name, ele_name, class_name):
+  monster_list = df['Monster'].to_list()
   ele_list = ele_name.split('-')
   attempt = 6
   while attempt > 0:
@@ -23,6 +22,9 @@ def check_word(ind, mon_name, game_name, ele_name, class_name):
       print(ele_name + "  \U0001F7E2")
       print(class_name + "  \U0001F7E2")
       break
+    elif guess not in monster_list:
+      print("It looks like we don't have that monster\n")
+      continue
     else:
       attempt = attempt - 1
       print(f"you have {attempt} attempt(s) \n ")
