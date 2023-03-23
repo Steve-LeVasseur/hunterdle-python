@@ -64,7 +64,7 @@ def check_word(ind, mon_name, game_name, ele_name, class_name):
       #      else:
       #          print(word + " X ")
       if attempt == 0:
-        print(" Game over !!!! ")
+        print(" Game over !!!! " + mon_name + " fled the area!  (" + game_name + " // " + ele_name + " // " + class_name + ")")
 
 def choose_monster():
    rando = random.randint(0,len(df)-1)
